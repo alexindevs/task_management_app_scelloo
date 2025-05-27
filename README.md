@@ -34,7 +34,7 @@ A RESTful API for managing tasks with role-based access control, built using Nod
 
 ```bash
 git clone https://github.com/alexindevs/task_management_app_scelloo
-cd task-management-app
+cd task_management_app_scelloo
 npm install
 ````
 
