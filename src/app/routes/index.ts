@@ -7,6 +7,6 @@ const router = Router();
 
 router.use('/auth', authRoutes);
 router.use('/tasks', taskRoutes)
-router.use('reports', reportRoutes)
+router.use('/reports', reportRoutes)
 
 export default router;

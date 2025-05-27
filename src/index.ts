@@ -5,7 +5,7 @@ import swaggerUi from 'swagger-ui-express';
 import { logger } from './utils/logger';
 import { config } from './config';
 import routes from './app/routes';
-import { errorHandlerMiddleware } from './middleware';
+import { errorHandlerMiddleware } from './app/middleware';
 import swaggerSpec from './utils/swagger';
 
 const app = express();

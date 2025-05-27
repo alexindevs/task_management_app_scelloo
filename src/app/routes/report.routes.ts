@@ -1,6 +1,6 @@
 // src/routes/report.routes.ts
 import { Router } from 'express';
-import { requireAuth, requireRole } from '../../middleware';
+import { requireAuth, requireRole } from '../middleware';
 import { ReportController } from '../controllers';
 
 const router = Router();

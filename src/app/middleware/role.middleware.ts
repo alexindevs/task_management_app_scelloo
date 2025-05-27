@@ -1,6 +1,6 @@
 import { Response, NextFunction } from 'express';
-import { AuthenticatedRequest } from './auth.middleware.js';
-import { ApiError } from '../utils/api-error';
+import { AuthenticatedRequest } from './auth.middleware';
+import { ApiError } from '../../utils/api-error';
 
 export function requireRole(role: 'admin' | 'user') {
   return (req: AuthenticatedRequest, _res: Response, next: NextFunction) => {

@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { config } from '../../config';
 import { UserRepository } from '../repositories';
+import { ApiError } from '../../utils/api-error';
 
 export class AuthService {
   private userRepo: UserRepository;
@@ -13,7 +14,7 @@ export class AuthService {
   async registerUser(data: { email: string; password: string; role?: 'user' | 'admin' }) {
     const exists = await this.userRepo.isEmailTaken(data.email);
     if (exists) {
-      throw new Error('Email already in use');
+      throw new ApiError('Email is already registered', 409);
     }
 
     const hashed = await bcrypt.hash(data.password, 10);
@@ -35,12 +36,12 @@ export class AuthService {
   async loginUser(email: string, password: string) {
     const user = await this.userRepo.findByEmail(email);
     if (!user) {
-      throw new Error('Invalid credentials');
+      throw new ApiError('Invalid credentials', 401);
     }
 
     const valid = await bcrypt.compare(password, user.password);
     if (!valid) {
-      throw new Error('Invalid credentials');
+      throw new ApiError('Invalid credentials', 401);
     }
 
     const token = jwt.sign(

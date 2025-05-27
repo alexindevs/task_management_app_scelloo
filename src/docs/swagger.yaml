@@ -29,6 +29,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuthSuccessResponse'
+        '409':
+          description: Email already registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '400':
           description: Validation error or bad request
           content:
@@ -309,7 +315,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
 
-  /report:
+  /reports:
     get:
       tags:
         - Reports
@@ -434,6 +440,13 @@ components:
             token:
               type: string
               example: your.jwt.token.here
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
 
     ValidationErrorResponse:
       type: object

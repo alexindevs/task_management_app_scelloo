@@ -13,7 +13,6 @@ const sequelize = new Sequelize(config.databaseUrl, {
   },
   define: {
     timestamps: true,
-    underscored: true,
   },
 });
 

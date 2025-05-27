@@ -43,7 +43,6 @@ import {
         sequelize,
         tableName: 'users',
         timestamps: true,
-        underscored: true,
       }
     );
   }

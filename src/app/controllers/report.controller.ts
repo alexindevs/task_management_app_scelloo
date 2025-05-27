@@ -1,7 +1,7 @@
 import { Response, NextFunction } from 'express';
 import { ReportService } from '../services/report.service';
 import { sendSuccess } from '../../utils/response';
-import { AuthenticatedRequest } from '../../middleware';
+import { AuthenticatedRequest } from '../middleware';
 import { ApiError } from '../../utils/api-error';
 
 export class ReportController {

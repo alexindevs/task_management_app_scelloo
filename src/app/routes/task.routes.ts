@@ -1,8 +1,8 @@
 // src/routes/task.routes.ts
 import { Router } from 'express';
 import { TaskController } from '../controllers';
-import { validate } from '../../middleware';
-import { requireAuth } from '../../middleware';
+import { validate } from '../middleware';
+import { requireAuth } from '../middleware';
 import { createTaskSchema, updateTaskSchema } from '../validators';
 
 const router = Router();

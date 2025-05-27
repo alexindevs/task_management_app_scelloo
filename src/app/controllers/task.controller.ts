@@ -2,7 +2,7 @@ import { Response, NextFunction } from 'express';
 import { TaskService } from '../services';
 import { sendSuccess } from '../../utils/response';
 import { taskQueryParamsSchema } from '../validators';
-import { AuthenticatedRequest } from '../../middleware';
+import { AuthenticatedRequest } from '../middleware';
 import { ApiError } from '../../utils/api-error';
 
 export class TaskController {

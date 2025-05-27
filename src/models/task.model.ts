@@ -16,8 +16,6 @@ import {
     declare description?: string;
     declare status: 'pending' | 'in-progress' | 'completed';
     declare userId: string;
-    declare createdAt: CreationOptional<Date>;
-    declare updatedAt: CreationOptional<Date>;
   }
   
   export function initTaskModel(sequelize: Sequelize) {
@@ -43,23 +41,12 @@ import {
         userId: {
           type: DataTypes.STRING,
           allowNull: false,
-        },
-        createdAt: {
-          type: DataTypes.DATE,
-          allowNull: false,
-          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-        },
-        updatedAt: {
-          type: DataTypes.DATE,
-          allowNull: false,
-          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-        },
+        }
       },
       {
         sequelize,
         tableName: 'tasks',
         timestamps: true,
-        underscored: true,
       }
     );
   }
