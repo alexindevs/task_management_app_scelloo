@@ -67,6 +67,9 @@ npm run dev
 Access Swagger docs at:
 `http://localhost:3000/docs`
 
+Access Postman docs at:
+`https://documenter.getpostman.com/view/28783766/2sB2qdfKUW`
+
 ---
 
 ## 🧪 Testing the API
